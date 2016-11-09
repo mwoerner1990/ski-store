@@ -1,1 +1,11 @@
-<h1> Welcome to the Ski Store! </h1>
+<h1> Welcome to the Ski Store!! </h1>
+
+<h2> Here are the 3 products for sale! </h2>
+
+<% @products.each do |product| %>
+  <h2> Name: <%= product.name %> </h2>
+  <p> Price: <%= product.price %> </p>
+  <p> Picture: </p> <img src="<%= product.image %>"/>
+  <p> Details: <%= product.description %> </p>
+<% end %>
+
