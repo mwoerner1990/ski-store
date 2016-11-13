@@ -37,4 +37,10 @@ class SkisController < ApplicationController
     @ski = Store.find_by(id: params[:id])
     render 'show.html.erb'
   end
+
+  def destroy
+    @ski = Store.find_by(id: params[:id])
+    @ski.destroy
+    render 'destroy.html.erb'
+  end
 end

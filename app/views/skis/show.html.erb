@@ -15,5 +15,13 @@
     </table>
   </div>
 
-  <a href=<%="/skis/#{@ski.id}/edit"%>> Edit Product </a>
-  <a href="/skis"> Click to go back to homepage!</a>
+  <div>
+    <a href=<%="/skis/#{@ski.id}/edit"%>> Edit Product </a>
+  </div>
+  <div>
+    <a href="/skis"> Click to go back to homepage!</a>
+  </div>
+  
+  <div>
+    <%= link_to "Delete this product", "/skis/#{@ski.id}", method: :delete %>
+  </div>

@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get '/skis/:id/edit' => 'skis#edit'
   patch '/skis/:id' => 'skis#update'
   get '/skis/:id' => 'skis#show'
+  delete 'skis/:id' => 'skis#destroy'
 end
