@@ -6,11 +6,14 @@
       <th> Description </th>
 
       <tr>
-        <td> <%= @skis.name %> </td>
-        <td> $<%= @skis.price %> </td>
-        <td> <img src="<%= @skis.image %>"/></td>
-        <td>  <%= @skis.description %> </td>
+        <td> <%= @ski.name %> </td>
+        <td> $<%= @ski.price %> </td>
+        <td> <img src="<%= @ski.image %>"/></td>
+        <td>  <%= @ski.description %> </td>
       </tr>
     
     </table>
   </div>
+
+  <a href=<%="/skis/#{@ski.id}/edit"%>> Edit Product </a>
+  <a href="/skis"> Click to go back to homepage!</a>

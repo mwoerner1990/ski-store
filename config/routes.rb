@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   get '/skis' => 'skis#index'
   get '/skis/new' => 'skis#new'
   post '/skis' => 'skis#create'
+  get '/skis/:id/edit' => 'skis#edit'
+  patch '/skis/:id' => 'skis#update'
   get '/skis/:id' => 'skis#show'
 end

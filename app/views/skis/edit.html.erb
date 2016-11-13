@@ -1,0 +1,22 @@
+<h1 class="text-center"> Edit an existing ski Product </h1>
+
+<h1 class="text-center">Edit</h1>
+<%= form_tag "/skis/#{@ski.id}", method: :patch do %>
+  <div class="form-group">
+    <%= label_tag :name %>
+    <%= text_field_tag :name, @ski.name, class: "form-control" %>
+  </div>
+  <div>
+    <%= label_tag :price %>
+    <%= text_field_tag :price, @ski.price, class: "form-control" %>
+  </div>
+  <div>
+    <%= label_tag :image%>
+    <%= text_field_tag :image, @ski.image, class: "form-control" %>
+  </div>
+  <div>
+    <%= label_tag :description %>
+    <%= text_field_tag :description, @ski.description, class: "form-control" %>
+  </div>
+  <%= submit_tag "Edit" %>
+<% end %>

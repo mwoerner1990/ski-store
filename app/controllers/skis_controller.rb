@@ -18,8 +18,23 @@ class SkisController < ApplicationController
     render 'create.html.erb'
   end
 
+  def edit
+    @ski = Store.find_by(id: params[:id])
+    render 'edit.html.erb'
+  end
+
+  def update
+    ski = Store.find_by(id: params[:id])
+    ski.name = params[:name]
+    ski.price = params[:price]
+    ski.image = params[:image]
+    ski.description = params[:description]
+    ski.save
+    render 'update.html.erb'
+  end
+
   def show
-    @skis = Store.find_by(id: params[:id])
+    @ski = Store.find_by(id: params[:id])
     render 'show.html.erb'
   end
 end
