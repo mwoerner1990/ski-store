@@ -1,0 +1,22 @@
+<h1 class="text-center"> Add a new Ski to the product homepage! </h1>
+
+<h1 class="text-center">New Skis</h1>
+<%= form_tag '/skis', method: :post do %>
+  <div class="form-group">
+    <%= label_tag :name %>
+    <%= text_field_tag :name, nil, class: "form-control" %>
+  </div>
+  <div>
+    <%= label_tag :price %>
+    <%= text_field_tag :price, nil, class: "form-control" %>
+  </div>
+  <div>
+    <%= label_tag :image%>
+    <%= text_field_tag :image, nil, class: "form-control" %>
+  </div>
+  <div>
+    <%= label_tag :description %>
+    <%= text_field_tag :description, nil, class: "form-control" %>
+  </div>
+  <%= submit_tag "Add new skis" %>
+<% end %>
