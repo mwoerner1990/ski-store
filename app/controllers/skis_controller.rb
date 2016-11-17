@@ -15,7 +15,9 @@ class SkisController < ApplicationController
       description: params[:description]
       )
     ski.save
-    render 'create.html.erb'
+    # render 'create.html.erb'
+    flash[:success] = "Congrats! Created successfully!"
+    redirect_to '/skis'
   end
 
   def edit
@@ -30,7 +32,9 @@ class SkisController < ApplicationController
     ski.image = params[:image]
     ski.description = params[:description]
     ski.save
-    render 'update.html.erb'
+    # render 'update.html.erb'
+    flash[:success] = "Congrats! Updated successfully!"
+    redirect_to "/skis/#{ski.id}"
   end
 
   def show
@@ -41,6 +45,8 @@ class SkisController < ApplicationController
   def destroy
     @ski = Store.find_by(id: params[:id])
     @ski.destroy
-    render 'destroy.html.erb'
+    # render 'destroy.html.erb'
+    flash[:success] = "Congrats! Item deleted successfully!"
+    redirect_to "/skis"
   end
 end
