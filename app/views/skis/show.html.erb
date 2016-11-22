@@ -5,6 +5,7 @@
       <th></th>
       <th> Image </th>
       <th> Description </th>
+      <th> Supplier </th>
       <th> Tax </th>
       <th> Total </th>
 
@@ -20,6 +21,7 @@
 
         <td> <img src="<%= @ski.image %>"/></td>
         <td>  <%= @ski.description %> </td>
+        <td> <%= @ski.supplier.name %> </td>
         <td> $<%= @ski.tax %> </td>
         <td> $<%= @ski.total %></td>
       </tr>

@@ -1,5 +1,6 @@
 class Store < ApplicationRecord
 
+  belongs_to :supplier
   # def sale_message
   #   if price.to_i <= 600
   #     "Discount item!"
