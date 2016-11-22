@@ -1,6 +1,9 @@
 class SkisController < ApplicationController
   def index
-    @skis = Store.all
+    @skis = Store.order(params[:sort_by])
+    if params[:sort_by] == "discounted"
+      @skis = Store.where("price < ?", 600) 
+    end
     render 'index.html.erb'
   end
 

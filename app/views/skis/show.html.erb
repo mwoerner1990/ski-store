@@ -10,8 +10,14 @@
 
       <tr>
         <td> <%= @ski.name %> </td>
-        <td> $<%= @ski.price %> </td>
-        <td> <%= @ski.sale_message %> </td>
+        <% if @ski.discounted? %>
+        <td class="discount-item"> <%= number_to_currency(@ski.price) %></td>
+              <td>Discount Item!</td>
+            <% else %>
+              <td> <%= number_to_currency(@ski.price) %></td>
+              <td>Everyday Value!</td>
+        <% end %>
+
         <td> <img src="<%= @ski.image %>"/></td>
         <td>  <%= @ski.description %> </td>
         <td> $<%= @ski.tax %> </td>
