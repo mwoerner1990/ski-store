@@ -3,6 +3,7 @@ class Store < ApplicationRecord
   belongs_to :supplier
   has_many :orders
   has_many :carted_products
+  
 
   has_many :category_stores
   has_many :categories, through: :category_stores

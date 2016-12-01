@@ -1,4 +1,7 @@
-<%= @carted_store.store.name %>
-<%= @carted_store.quantity %>
-<%= @carted_store.%>
-<%= @carted_store.store %>
+
+<% @carted_products.each do |product| %>
+  <p> Product </p><%= product.store.name %>
+  <p> Quantity </p><%= product.quantity %>
+<% end %>
+
+
