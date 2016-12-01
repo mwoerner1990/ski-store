@@ -1,4 +1,4 @@
-class SuppliersController < ApplicationController
+pclass SuppliersController < ApplicationController
   def index
     @suppliers = Supplier.order(params[:sort_by])
     if params[:sort_by] == "discounted"

@@ -14,7 +14,7 @@
       <tr>
         <td> <a href="/skis/<%= ski.id %>"><%= ski.name %> </a></td>
         <td> <%= number_to_currency(ski.price) %> </td>
-        <td> <img src="<%= ski.image %>"></td>
+        <td> <img src="<%= ski.images.first.name %>"></td>
         <td>  <%= ski.description %> </td>
         <td> <%= ski.stock %> </td>
       </tr>

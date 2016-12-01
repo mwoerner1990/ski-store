@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/skis/:id' => 'skis#show'
   delete 'skis/:id' => 'skis#destroy'
 
-  #supplier
+  #Supplier
 
   get '/suppliers' => 'suppliers#index'
   get '/suppliers/new' => 'suppliers#new'
@@ -18,5 +18,19 @@ Rails.application.routes.draw do
   patch '/suppliers/:id' => 'suppliers#update'
   get '/suppliers/:id' => 'suppliers#show'
   delete 'suppliers/:id' => 'suppliers#destroy'
+
+  #Sign-up/Sessions Protocol:
+
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+
+  post '/orders' => 'orders#create'
+  get '/orders/:id' => 'orders#show'
+
+  get '/cartedstores' => 'carted_stores#index'
+  post '/cartedstores' => 'carted_stores#create'
 
 end

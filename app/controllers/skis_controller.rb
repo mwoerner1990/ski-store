@@ -3,7 +3,12 @@ class SkisController < ApplicationController
     @skis = Store.order(params[:sort_by])
     if params[:sort_by] == "discounted"
       @skis = Store.where("price < ?", 600) 
-    end
+    elsif params[:category_name] != nil
+      selected_category = Category.find_by(name: params[:category_name]) 
+      @skis = selected_category.stores 
+    else
+      @skis = Store.all
+    end  
     render 'index.html.erb'
   end
 
@@ -14,7 +19,7 @@ class SkisController < ApplicationController
   def create
     ski = Store.new(name: params[:name],
       price: params[:price],
-      image: params[:image],
+      #image: params[:image],
       description: params[:description]
       )
     ski.save
@@ -32,7 +37,7 @@ class SkisController < ApplicationController
     ski = Store.find_by(id: params[:id])
     ski.name = params[:name]
     ski.price = params[:price]
-    ski.image = params[:image]
+    #ski.image = params[:image]
     ski.description = params[:description]
     ski.save
     # render 'update.html.erb'

@@ -8,6 +8,7 @@
       <th> Supplier </th>
       <th> Tax </th>
       <th> Total </th>
+      <th> Categories </th>
 
       <tr>
         <td> <%= @ski.name %> </td>
@@ -19,12 +20,29 @@
               <td>Everyday Value!</td>
         <% end %>
 
-        <td> <img src="<%= @ski.image %>"/></td>
+        <td> <img src="<%= @ski.images %>"/></td>
         <td>  <%= @ski.description %> </td>
         <td> <%= @ski.supplier.name %> </td>
         <td> $<%= @ski.tax %> </td>
         <td> $<%= @ski.total %></td>
+        <% @ski.categories.each do |category| %>
+          <td> <a href="/?category_name=<%= category.name %>"><%= category.name %></a></td>
+        <% end %>
       </tr>
+
+      <h1 class="text-center">New Order</h1>
+<%= form_tag '/cartedstores', method: :post do %>
+  <div class="form-group">
+    <%= label_tag :quantity %>
+    <%= text_field_tag :quantity, nil, class: "form-control" %>
+  </div>
+  <div>
+    <%= label_tag :store_id, "Product ID" %>
+    <%= text_field_tag :store_id, nil, class: "form-control" %>
+  </div>
+  </div>
+  <%= submit_tag "Add to Cart" %>
+<% end %>
     
     </table>
   </div>
